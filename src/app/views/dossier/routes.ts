@@ -134,7 +134,7 @@ export const routes: Routes = [
       },
       {
         path: 'DossierDetails/:id',
-        loadComponent: () => import('./Dossier-details/Dossier-details.component').then(m => m.DossierDetailsComponent),
+        loadComponent: () => import('./Dossier-details/dossier-details.component').then(m => m.DossierDetailsComponent),
 
       },
 
