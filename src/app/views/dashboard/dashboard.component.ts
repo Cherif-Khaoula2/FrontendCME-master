@@ -1,8 +1,8 @@
 import { Component, OnInit, ViewChild, ChangeDetectorRef, OnDestroy } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ChartData, ChartDataset, ChartOptions, Color } from 'chart.js';
+
 import { ChartjsComponent } from '@coreui/angular-chartjs';
-import { BaseChartDirective } from 'ng2-charts';
 import { CommonModule } from '@angular/common';
 import { takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
@@ -39,7 +39,7 @@ interface DecisionStatsResponse {
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss'],
   standalone: true,
-  imports: [ChartjsComponent, BaseChartDirective, CommonModule],
+  imports: [ChartjsComponent, CommonModule],
 })
 export class DashboardComponent implements OnInit, OnDestroy {
   // Dossiers Chart Data and Options
@@ -204,7 +204,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
   }
 
   fetchUsersByRoleStats(): void {
-    this.http.get<UserRoleStat[]>('https://cmeapp.sarpi-dz.com/api/user/statistics/users-by-role', { withCredentials: true }).pipe(takeUntil(this.ngUnsubscribe))
+    this.http.get<UserRoleStat[]>('https://cmeapp.sarpi-dz.com/api/user/user/statistics/users-by-role', { withCredentials: true }).pipe(takeUntil(this.ngUnsubscribe))
       .subscribe(
         (response) => {
           this.usersByRoleData.labels = response.map(stat => stat.role);
