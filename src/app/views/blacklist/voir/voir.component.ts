@@ -52,7 +52,7 @@ import Swal from "sweetalert2";
   styleUrl: './voir.component.scss'
 })
 export class VoirComponent {
-  private apiUrl = "https://cmeapp.sarpi-dz.com/blacklist";
+  private apiUrl = "https://cmeapp.sarpi-dz.com/blacklist/blacklist";
   nomFournisseur = '';
   isBlacklisted: boolean | null = null;
     getAlls(): Observable<any[]> {

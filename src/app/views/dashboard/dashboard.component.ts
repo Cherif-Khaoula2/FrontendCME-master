@@ -245,7 +245,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
   }
 
   fetchDecisionStats(): void {
-    this.http.get<DecisionStatsResponse>('https://cmeapp.sarpi-dz.com/api/dossiers/decisions/counts').pipe(takeUntil(this.ngUnsubscribe)).subscribe(
+    this.http.get<DecisionStatsResponse>('https://cmeapp.sarpi-dz.com/api/decisions/counts').pipe(takeUntil(this.ngUnsubscribe)).subscribe(
       (response) => {
         if (response && typeof response === 'object') {
           this.decisionData.labels = Object.keys(response);
