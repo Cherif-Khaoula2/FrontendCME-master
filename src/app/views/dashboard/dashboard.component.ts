@@ -204,7 +204,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
   }
 
   fetchUsersByRoleStats(): void {
-    this.http.get<UserRoleStat[]>('https://cmeapp.sarpi-dz.com/api/user/user/statistics/users-by-role', { withCredentials: true }).pipe(takeUntil(this.ngUnsubscribe))
+    this.http.get<UserRoleStat[]>('https://cmeapp.sarpi-dz.com/api/user/statistics/users-by-role', { withCredentials: true }).pipe(takeUntil(this.ngUnsubscribe))
       .subscribe(
         (response) => {
           this.usersByRoleData.labels = response.map(stat => stat.role);
