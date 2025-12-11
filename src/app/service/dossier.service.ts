@@ -45,7 +45,7 @@ chargeDossierId?: string;}
   providedIn: 'root',
 })
 export class DossierService {
-  private apiUrl = 'https://cmeapp.sarpi-dz.com/dossiers/api';
+  private apiUrl = 'https://cmeapp.sarpi-dz.com/dossiers/dossiers/api';
   private passationUrl = 'https://cmeapp.sarpi-dz.com/dossiers/api/passations'; // API pour Enum
   private  pdfUrl = 'https://cmeapp.sarpi-dz.com/pdfapi/generate-merged-files-pdf';
  private listUrl  = 'https://cmeapp.sarpi-dz.com/blacklist/blacklist';
