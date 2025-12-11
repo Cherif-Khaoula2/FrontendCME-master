@@ -214,7 +214,7 @@ export class TraitementComponent implements OnInit {
     console.log('Données envoyées à l\'IA :', dossier);
 
     // Send data to the Flask prediction API
-    this.http.post<any>('http://localhost:5000/predict', dossier).subscribe({
+    this.http.post<any>('https://cmeapp.sarpi-dz.com:5000/predict', dossier).subscribe({
       next: (response) => {
         console.log('Résultats de l\'IA reçus :', response);
         this.predictionResultRF = response.RandomForest;

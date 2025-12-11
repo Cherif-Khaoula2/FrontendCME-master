@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, Observable, throwError } from 'rxjs';
 
-const BASE_URL = 'http://localhost:8082/email/';
+const BASE_URL = 'https://cmeapp.sarpi-dz.com:8082/email/';
 
 @Injectable({
   providedIn: 'root'
