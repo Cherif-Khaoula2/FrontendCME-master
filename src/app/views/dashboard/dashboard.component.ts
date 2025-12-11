@@ -179,7 +179,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
   }
 
   fetchDossierStats(): void {
-    this.http.get<any>('https://cmeapp.sarpi-dz.com:8085/api/dossiers/stats/etat').pipe(takeUntil(this.ngUnsubscribe)).subscribe(
+    this.http.get<any>('https://cmeapp.sarpi-dz.com/api/dossiers/stats/etat').pipe(takeUntil(this.ngUnsubscribe)).subscribe(
       (response) => {
         if (response && typeof response === 'object') {
           this.data.datasets[0].data = [
@@ -220,7 +220,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
   }
 
   fetchUserDossierStats(): void {
-    this.http.get<any>('https://cmeapp.sarpi-dz.com:8085/api/dossiers/stats/etat/by-user', { withCredentials: true}).pipe(takeUntil(this.ngUnsubscribe)).subscribe(
+    this.http.get<any>('https://cmeapp.sarpi-dz.com/api/dossiers/stats/etat/by-user', { withCredentials: true}).pipe(takeUntil(this.ngUnsubscribe)).subscribe(
       (response) => {
         if (response && typeof response === 'object') {
           this.userDossiersData.datasets[0].data = [
@@ -245,7 +245,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
   }
 
   fetchDecisionStats(): void {
-    this.http.get<DecisionStatsResponse>('https://cmeapp.sarpi-dz.com:8085/api/decisions/counts').pipe(takeUntil(this.ngUnsubscribe)).subscribe(
+    this.http.get<DecisionStatsResponse>('https://cmeapp.sarpi-dz.com/api/decisions/counts').pipe(takeUntil(this.ngUnsubscribe)).subscribe(
       (response) => {
         if (response && typeof response === 'object') {
           this.decisionData.labels = Object.keys(response);

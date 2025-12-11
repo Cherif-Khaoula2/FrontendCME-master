@@ -204,7 +204,7 @@ export class DossiersComponent implements OnInit, AfterViewInit {
   }
 
   generatePdfReport() {
-    window.open('https://cmeapp.sarpi-dz.com:9091/generate-dossier-pdf', '_blank');
+    window.open('https://cmeapp.sarpi-dz.com/generate-dossier-pdf', '_blank');
   }
 
   onTypeChange(): void {
