@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable, tap, catchError, throwError } from 'rxjs';
 import { Router } from '@angular/router';
 
-const BASE_URL = "https://cmeapp.sarpi-dz.com:8081/api/";
+const BASE_URL = "https://cmeapp.sarpi-dz.com/api/";
 
 @Injectable({
   providedIn: 'root'
