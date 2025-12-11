@@ -204,7 +204,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
   }
 
   fetchUsersByRoleStats(): void {
-    this.http.get<UserRoleStat[]>('https://cmeapp.sarpi-dz.com/api/statistics/users-by-role/', { withCredentials: true }).pipe(takeUntil(this.ngUnsubscribe))
+    this.http.get<UserRoleStat[]>('https://cmeapp.sarpi-dz.com/api/user/statistics/users-by-role', { withCredentials: true }).pipe(takeUntil(this.ngUnsubscribe))
       .subscribe(
         (response) => {
           this.usersByRoleData.labels = response.map(stat => stat.role);
@@ -245,7 +245,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
   }
 
   fetchDecisionStats(): void {
-    this.http.get<DecisionStatsResponse>('https://cmeapp.sarpi-dz.com/api/decisions/counts/').pipe(takeUntil(this.ngUnsubscribe)).subscribe(
+    this.http.get<DecisionStatsResponse>('https://cmeapp.sarpi-dz.com/api/user/decisions/counts').pipe(takeUntil(this.ngUnsubscribe)).subscribe(
       (response) => {
         if (response && typeof response === 'object') {
           this.decisionData.labels = Object.keys(response);
