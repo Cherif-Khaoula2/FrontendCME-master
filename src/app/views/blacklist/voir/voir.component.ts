@@ -153,7 +153,7 @@ export class VoirComponent {
     this.router.navigate(['/base/ajouteuser']);
   }
   generatePdfReport() {
-    window.open('https://cmeapp.sarpi-dz.com/generate-pdf', '_blank');
+    window.open('https://cmeapp.sarpi-dz.com/pdfapi/generate-pdf', '_blank');
   }
   check() {
     this.dossierService.checkFournisseur(this.nomFournisseur).subscribe({
