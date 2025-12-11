@@ -66,12 +66,18 @@
               ],
               "outputHashing": "all"
             },
-            "development": {
-              "optimization": false,
-              "extractLicenses": false,
-              "sourceMap": true,
-              "namedChunks": true
-            }
+         "production": {
+  "optimization": {
+    "scripts": true,
+    "styles": true,
+    "fonts": false
+  },
+  "extractLicenses": true,
+  "sourceMap": false,
+  "namedChunks": false,
+  "outputHashing": "all"
+}
+
           },
           "defaultConfiguration": "production"
         },
