@@ -45,10 +45,10 @@ chargeDossierId?: string;}
   providedIn: 'root',
 })
 export class DossierService {
-  private apiUrl = 'https://cmeapp.sarpi-dz.com/api/dossiers/';
-  private passationUrl = 'https://cmeapp.sarpi-dz.com/api/passations/'; // API pour Enum
-  private  pdfUrl = 'https://cmeapp.sarpi-dz.com/generate-merged-files-pdf/';
- private listUrl  = 'https://cmeapp.sarpi-dz.com/blacklist/';
+  private apiUrl = 'https://cmeapp.sarpi-dz.com/api/dossiers';
+  private passationUrl = 'https://cmeapp.sarpi-dz.com/dossiers/api/passations'; // API pour Enum
+  private  pdfUrl = 'https://cmeapp.sarpi-dz.com//pdfapi/generate-merged-files-pdf';
+ private listUrl  = 'https://cmeapp.sarpi-dz.com/blacklist/blacklist';
   constructor(private http: HttpClient) {}
 
   ajouterDossier(formData: FormData): Observable<any> {
@@ -77,7 +77,7 @@ export class DossierService {
     return this.http.get<any>(`${this.apiUrl}/${id}`,{withCredentials: true});
   }
   getDossierByIdd(id: number): Observable<any> {
-    return this.http.get<any>(`https://cmeapp.sarpi-dz.com/api/decisions/dossiers/{{id}}`,{withCredentials: true});
+    return this.http.get<any>(`https://cmeapp.sarpi-dz.com/api/dossiers/decisions/dossiers/{{id}}`,{withCredentials: true});
   }
 
   getDossierByNumeroDossier(numeroDossier: string): Observable<any> {
@@ -90,7 +90,7 @@ export class DossierService {
     return this.http.get<any[]>(`${this.apiUrl}/`,{withCredentials: true});
   }
   getAllDossierswithout(): Observable<any[]> {
-    return this.http.get<any[]>(` https://cmeapp.sarpi-dz.com/api/resultats/dossiers-sans-mon-resultat`,{withCredentials: true});
+    return this.http.get<any[]>(` https://cmeapp.sarpi-dz.com/api/dossiers/resultats/dossiers-sans-mon-resultat`,{withCredentials: true});
   }
 
   getAlllDossiers(): Observable<any[]> {
@@ -107,7 +107,7 @@ export class DossierService {
     return this.http.put(`${this.apiUrl}/${id}/changer-etat?nouvelEtat=${nouvelEtat}`, {withCredentials: true });
   }
   getStatsParEtat(): Observable<{ [key: string]: number }> {
-    return this.http.get<{ [key: string]: number }>('https://cmeapp.sarpi-dz.com/api/dossiers/stats/etat/');
+    return this.http.get<{ [key: string]: number }>('https://cmeapp.sarpi-dz.com/api/dossiers/stats/etat');
   }
   ajouterResultatEtCompteRendu(idDossier: number, resultat: string, compteRendu: string) {
     const params = new HttpParams()
