@@ -39,7 +39,7 @@ interface DecisionStatsResponse {
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss'],
   standalone: true,
-  imports: [ChartjsComponent, CommonModule],
+  imports: [ChartjsComponent , CommonModule],
 })
 export class DashboardComponent implements OnInit, OnDestroy {
   // Dossiers Chart Data and Options
